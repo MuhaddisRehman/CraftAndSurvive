@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://vo3yhkr05cb"]
+
+[ext_resource type="Script" path="res://Entities/Characters/Player/player.gd" id="1_siayk"]
+[ext_resource type="Texture2D" uid="uid://cqeohdyu27ixa" path="res://Assets/Characters/UncannyBox.png" id="2_vw053"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrmmt"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaacw"]
+radius = 50.0899
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_siayk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vw053")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mrmmt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="EquipRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EquipRange"]
+shape = SubResource("CircleShape2D_kaacw")
+
+[node name="Anchor" type="Marker2D" parent="."]
+
+[node name="AnchorEnd" type="Marker2D" parent="Anchor"]
+position = Vector2(32, 0)
+
+[connection signal="area_entered" from="EquipRange" to="." method="_on_equip_range_area_entered"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://q8k6a3sc1xfp"]
+
+[ext_resource type="PackedScene" uid="uid://dscfawbn6uyw6" path="res://UI/ui.tscn" id="1_mvc4g"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="BackGround" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.380392, 0.470588, 0.662745, 1)
+
+[node name="ui" parent="." instance=ExtResource("1_mvc4g")]

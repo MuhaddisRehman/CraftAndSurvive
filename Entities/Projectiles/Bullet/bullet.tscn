@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cshdg37idurjb"]
+
+[ext_resource type="Script" path="res://Entities/Projectiles/Bullet/bullet.gd" id="1_4h5ag"]
+[ext_resource type="Texture2D" uid="uid://cqgh7d7jg047x" path="res://Assets/projectiles/bullet.png" id="2_wsddy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjq0h"]
+size = Vector2(4, 9)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_4h5ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -2.18557e-08)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_qjq0h")
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = ExtResource("2_wsddy")
+
+[node name="LifeTime" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

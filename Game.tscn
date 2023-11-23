@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhexra2trq5px"]
+
+[ext_resource type="PackedScene" uid="uid://q8k6a3sc1xfp" path="res://Entities/Levels/MainLevel/main_level.tscn" id="1_a5fta"]
+[ext_resource type="PackedScene" uid="uid://vo3yhkr05cb" path="res://Entities/Characters/Player/player.tscn" id="2_mff8h"]
+[ext_resource type="PackedScene" uid="uid://d13u85pfcq7ip" path="res://Entities/Weapons/Gun/gun.tscn" id="3_owq71"]
+
+[node name="Game" type="Node2D"]
+
+[node name="MainLevel" parent="." instance=ExtResource("1_a5fta")]
+
+[node name="Player" parent="." instance=ExtResource("2_mff8h")]
+position = Vector2(784, 440)
+
+[node name="Gun" parent="." instance=ExtResource("3_owq71")]
+position = Vector2(1189, 461)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

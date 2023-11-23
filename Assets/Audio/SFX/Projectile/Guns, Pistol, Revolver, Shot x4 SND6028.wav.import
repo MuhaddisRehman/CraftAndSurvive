@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://da5bdrwbff3ve"
+path="res://.godot/imported/Guns, Pistol, Revolver, Shot x4 SND6028.wav-21b6ae612b4d97ad8b33cd2f0ce349bb.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Projectile/Guns, Pistol, Revolver, Shot x4 SND6028.wav"
+dest_files=["res://.godot/imported/Guns, Pistol, Revolver, Shot x4 SND6028.wav-21b6ae612b4d97ad8b33cd2f0ce349bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

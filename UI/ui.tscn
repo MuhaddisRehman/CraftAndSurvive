@@ -35,15 +35,18 @@ size_flags_vertical = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 11
+alignment = 1
 
 [node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "
 "
 
-[node name="HealthBar" type="ProgressBar" parent="Control/MarginContainer"]
+[node name="HealthBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 value = 90.0
 rounded = true

@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cqgh7d7jg047x" path="res://Assets/projectiles/bullet.png" id="2_wsddy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjq0h"]
-size = Vector2(4, 9)
+size = Vector2(5.99999, 13)
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_4h5ag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, -2.18557e-08)
+position = Vector2(4.5, 3.59813e-06)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_qjq0h")
 
@@ -21,4 +21,5 @@ texture = ExtResource("2_wsddy")
 [node name="LifeTime" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

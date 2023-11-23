@@ -3,6 +3,8 @@ class_name Player
 @export var MAX_SPEED:float = 14
 @export var acceleration:float = 5
 @export var speed:float = 300 
+@export var health:float = 0
+@export var MAX_HEALTH:float = 100
 var weapon
 var weapon_equipped:bool= false
 var weapon_orbit_radius: float = 1.01 # Distance from the player
@@ -10,6 +12,7 @@ var weapon_orbit_radius: float = 1.01 # Distance from the player
 @onready var anchor_end = $Anchor/AnchorEnd
 
 func _ready():
+	health = MAX_HEALTH
 	add_to_group("player")
 
 func _physics_process(_delta):
@@ -51,6 +54,9 @@ func handleEquip()->void:
 		
 
 func can_equip_weapon(potential_weapon: Node2D) -> bool:
+	if not potential_weapon:
+		print("no weapon")
+		return false
 	print( potential_weapon.call("canBeEquipped"))
 	return potential_weapon.call("canBeEquipped") # Call the method on the weapon
 
@@ -65,4 +71,5 @@ func _on_equip_range_area_entered(area):
 	if area.get_parent() is Node2D and area.get_parent().is_in_group("weapons"):
 		weapon = area.get_parent()
 		
-		
+func take_damage(attack)->void:
+	health -= attack.damage

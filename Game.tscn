@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhexra2trq5px"]
+[gd_scene load_steps=6 format=3 uid="uid://bhexra2trq5px"]
 
 [ext_resource type="PackedScene" uid="uid://q8k6a3sc1xfp" path="res://Entities/Levels/MainLevel/main_level.tscn" id="1_a5fta"]
 [ext_resource type="PackedScene" uid="uid://vo3yhkr05cb" path="res://Entities/Characters/Player/player.tscn" id="2_mff8h"]
 [ext_resource type="PackedScene" uid="uid://d13u85pfcq7ip" path="res://Entities/Weapons/Gun/gun.tscn" id="3_owq71"]
+[ext_resource type="PackedScene" uid="uid://dscfawbn6uyw6" path="res://UI/ui.tscn" id="4_hemxd"]
+[ext_resource type="PackedScene" uid="uid://bo7rrcddtprj" path="res://Entities/Characters/Enemy/enemy.tscn" id="5_w3ysm"]
 
 [node name="Game" type="Node2D"]
 
@@ -15,3 +17,14 @@ position = Vector2(784, 440)
 position = Vector2(1189, 461)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ui" parent="." instance=ExtResource("4_hemxd")]
+
+[node name="HealthBar" parent="ui/Control/MarginContainer/VBoxContainer" index="1" node_paths=PackedStringArray("player")]
+player = NodePath("../../../../../Player")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player_scn") instance=ExtResource("5_w3ysm")]
+position = Vector2(1002, 316)
+player_scn = NodePath("../Player")
+
+[editable path="ui"]

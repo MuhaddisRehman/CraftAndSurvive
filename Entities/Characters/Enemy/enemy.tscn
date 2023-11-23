@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo7rrcddtprj"]
+
+[ext_resource type="Script" path="res://Entities/Characters/Enemy/enemy.gd" id="1_j40ij"]
+[ext_resource type="Texture2D" uid="uid://0kblign1yjjt" path="res://Assets/Characters/ball.png" id="1_qofkl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pa41n"]
+radius = 15.0333
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_j40ij")
+SPEED = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qofkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pa41n")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -29.0
+offset_top = -25.0
+offset_right = 29.0
+offset_bottom = -17.0
+theme_override_font_sizes/font_size = 0
+rounded = true
+show_percentage = false

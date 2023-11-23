@@ -28,6 +28,8 @@ shape = SubResource("CircleShape2D_r24st")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_voytq")
+volume_db = 0.837
+attenuation = 4.0
 bus = &"SFX"
 
 [connection signal="area_entered" from="EquipRange" to="." method="_on_equip_range_area_entered"]

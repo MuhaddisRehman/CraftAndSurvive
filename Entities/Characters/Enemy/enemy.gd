@@ -15,15 +15,19 @@ func _ready():
 func _physics_process(delta):
 	pursue(delta)
 
+
 func take_damage(damage)->void:
+	
 	health -= damage 
 	health_bar.value = health
 	if health <= 0:
 		die()
+
 func pursue(delta:float)->void:
 	if player_scn:
 		var direction = (player_scn.global_position - global_position).normalized()
 		velocity = direction * SPEED 
 		move_and_slide()
+
 func die()->void:
 	queue_free()
